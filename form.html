@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>COMP 322 - Assignment 4: Form Validation</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 16px;
+            margin: 20px;
+        }
+        #userForm {
+            display: inline-block;
+            border: 1px solid #cccccc;
+            padding: 20px 30px;
+        }
+        #userForm td {
+            padding: 5px 2px;
+        }
+        #userForm td.label {
+            text-align: right;
+            white-space: nowrap;
+        }
+        #messages p {
+            margin: 12px 0;
+        }
+    </style>
+</head>
+<body>
+
+<form id="userForm" autocomplete="off">
+    <table>
+        <tr>
+            <td class="label"><label for="username">Username:</label></td>
+            <td><input type="text" id="username" name="username"></td>
+        </tr>
+        <tr>
+            <td class="label"><label for="email">Email:</label></td>
+            <td><input type="text" id="email" name="email"></td>
+        </tr>
+        <tr>
+            <td class="label"><label for="phone">Phone number:</label></td>
+            <td><input type="text" id="phone" name="phone"></td>
+        </tr>
+        <tr>
+            <td class="label"><label for="password">Enter Password:</label></td>
+            <td><input type="password" id="password" name="password"></td>
+        </tr>
+        <tr>
+            <td class="label"><label for="confirmPassword">Confirm Password:</label></td>
+            <td><input type="password" id="confirmPassword" name="confirmPassword"></td>
+        </tr>
+        <tr>
+            <td class="label">Gender:</td>
+            <td>
+                <input type="radio" id="genderFemale" name="gender" value="Female">
+                <label for="genderFemale">Female</label>
+                <input type="radio" id="genderMale" name="gender" value="Male">
+                <label for="genderMale">Male</label>
+                <input type="radio" id="genderOther" name="gender" value="Other">
+                <label for="genderOther">Other</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="label"><label for="ageGroup">Age Group:</label></td>
+            <td>
+                <select id="ageGroup" name="ageGroup">
+                    <option value=""></option>
+                    <option value="under21">&lt; 21 years old</option>
+                    <option value="21-25">21 &ndash; 25 years old</option>
+                    <option value="26-35">26 &ndash; 35 years old</option>
+                    <option value="36-50">36 &ndash; 50 years old</option>
+                    <option value="over50">&gt; 50 years old</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="label">Favorite Music Genre:</td>
+            <td>
+                <input type="checkbox" id="genrePop" name="genre" value="Pop">
+                <label for="genrePop">Pop</label>
+                <input type="checkbox" id="genreHipHop" name="genre" value="Hip-hop">
+                <label for="genreHipHop">Hiphop</label>
+                <input type="checkbox" id="genreJazz" name="genre" value="Jazz">
+                <label for="genreJazz">Jazz</label>
+                <input type="checkbox" id="genreRock" name="genre" value="Rock">
+                <label for="genreRock">Rock</label>
+                <input type="checkbox" id="genreClassical" name="genre" value="Classical Music">
+                <label for="genreClassical">Classical Music</label>
+                <input type="checkbox" id="genreCountry" name="genre" value="Country">
+                <label for="genreCountry">Country</label>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" id="submitBtn" value="submit">
+                <input type="reset" id="clearBtn" value="clear">
+            </td>
+        </tr>
+    </table>
+
+    <!-- Validation messages are written here by validation.js -->
+    <div id="messages"></div>
+</form>
+
+<script src="validation.js"></script>
+</body>
+</html>
